@@ -43,6 +43,13 @@ const { title } = Astro.props;
 		font-family: ubuntu, system-ui, sans-serif;
 		background: #13151a;
 	}
+
+	::selection {
+		background-color: rgb(var(--accent));
+		color: white;
+		-webkit-text-fill-color: white;
+	}
+
 	code {
 		font-family:
 			Menlo,
