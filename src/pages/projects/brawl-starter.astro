@@ -1,0 +1,35 @@
+---
+import ProjectPage from "../../components/ProjectPage.astro";
+---
+
+<ProjectPage
+    name="brawl-starter"
+    title="Brawl Starter"
+    description="A Qt-based launcher for Knockout City that works with Linux and connects to kocity.xyz servers."
+>
+    <div class="button-row">
+        <a class="button-external-emphasis" href="https://github.com/ex4dev/brawl-starter" target="_blank">View on GitHub</a>
+    </div>
+    <hr>
+    <h3>About</h3>
+    <p>
+        <a href="https://knockoutcity.com" target="_blank">Knockout City</a> was one of my favorite games until the servers shut down in June 2023.
+        Fortunately, the developers released a version of the game that's playable on 3rd party servers. However, the process of setting up the client
+        manually can be quite tedious, and the server binary provided by the developers has no authentication.
+    </p>
+    <p>
+        After a few months, a community-created launcher for the game was created at <a href="https://kocity.xyz" target="_blank">kocity.xyz</a>. It
+        included authentication through their own servers with Discord accounts, and the ability to locate and connect several public servers, but
+        the launcher itself was slow and didn't work on Linux at the time. Wanting to learn Qt development at the time, I decided to make my own
+        lightweight, Linux-focused launcher for Knockout City.
+    </p>
+    <p>My launcher includes the following features:</p>
+    <ul>
+        <li>Managing the game installation process*</li>
+        <li>Browsing public servers and viewing their status</li>
+        <li>Adding custom servers with support for simple password-based and kocity.xyz authentication</li>
+        <li>Works on Linux!</li>
+    </ul>
+    <p><i>*Due to high bandwidth, the developers have moved the game download from their own CDN to Steam. Brawl Starter has not yet been updated to download the new version.</i></p>
+    <!-- I wanted to learn Qt at the same time as I needed a Linux launcher for Knockout City -->
+</ProjectPage>

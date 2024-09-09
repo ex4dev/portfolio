@@ -1,0 +1,98 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+---
+
+<ProjectPage
+    name="bluedragon"
+    title="BlueDragon"
+    description="An original, completely custom Minecraft server featuring 13 minigames, 42 leaderboards, and a whole lot of fun!"
+>
+    <div class="button-row">
+        <a class="button-external-emphasis" href="https://github.com/BlueDragonMC" target="_blank">View on GitHub</a>
+        <a class="button-external" href="https://developer.bluedragonmc.com/" target="_blank">View Developer Documentation</a>
+    </div>
+    <hr>
+    <h3>About</h3>
+    <p>This project has been in the making since 2019, and has gone through many iterations.
+        The current iteration began in June 2022.
+        While each one used different technologies and had a different backend design,
+        the modern iteration uses a custom <a href="https://github.com/BlueDragonMC/Server" target="_blank">implementation</a> of <a href="https://minestom.net/" target="_blank">Minestom</a>,
+        a queue system called <a href="https://github.com/BlueDragonMC/Puffin" target="_blank">Puffin</a>,
+        a <a href="https://papermc.io/software/velocity" target="_blank">Velocity</a> proxy with our <a href="https://github.com/BlueDragonMC/Komodo" target="_blank">Komodo</a> plugin,
+        and a Next.js <a href="https://bluedragonmc.com" target="_blank">website</a>.</p>
+    <h3>Games</h3>
+    <p>To prevent others from copying our work without adding their own substance, this part of the project is currently closed-source. Over the past 2 years, I've designed and developed 13 minigames, including:</p>
+    <ul>
+        <li><b>HueHunters</b>: A hide and seek game with an X-ray twist. Our entry to the <a href="https://hackmd.io/HwIBGm0ySw2cDfv2-UhyMw?view" target="_blank">Minestom Game Jam 2024</a>. A standalone open-source version of this game is available on <a href="https://github.com/BlueDragonMC/HueHunters" target="_blank">GitHub</a>.</li>
+        <li><b>Dominate</b>: A new spin on a classic: choose from 7 kits with varying playstyles and win fights at control points to take the lead. <a href="https://bluedragonmc.com/blog/2023-07-03-dominate-1-20" target="_blank">Learn more</a></li>
+        <li><b>Paintbrawl</b>: An arena shooter where players can mark their territory by painting the map. <a href="https://bluedragonmc.com/blog/2023-02-19-new-game-paintbrawl" target="_blank">Learn more</a></li>
+        <li><b>Infinijump</b>: An endless, procedurally-generated parkour course. <a href="https://bluedragonmc.com/blog/new-game-infinijump" target="_blank">Learn more</a></li>
+        <li><b>FastFall</b>: A race to the bottom of a procedurally-generated sphere of chaos.</li>
+        <li><b>Infection</b>: Players must hide from the zombies, who can spread their infection. The last survivor standing wins.</li>
+        <li><b>Skyfall</b>: A twist on <b>SkyWars</b>, where players can fly to different levels of the map - and punch chickens for a speed boost!</li>
+        <li><b>BedWars</b>: A demo for some of our more advanced features. Players must destroy the beds on opponents' islands to prevent them from respawning. The game features a variety of items and upgrades for purchase with currency that spawns over time.</li>
+        <li><b>SkyWars</b>: A recreation of a classic Minecraft minigame, where players spawn on islands in the sky and rush to collect loot that gives them an advantage in combat.</li>
+        <li><b>ArenaPvP</b>: An endless, open-ended combat game with a small arena and varied kits.</li>
+        <li><b>PvPMaster</b>: Players must be the first to get a kill with every armor set and weapon, from netherite to leather, to win the game.</li>
+        <li><b>WackyMaze</b>: Our very first minigame, where players must knock everyone else off the map without falling off themselves.</li>
+        <li><b>Lobby Parkour</b>: Players can enjoy 2 themed parkour courses complete with checkpoints and leaderboards without even leaving the lobby.</li>
+    </ul>
+    <h3>Features</h3>
+    <p>Over the years, we've built many features to enhance the quality of life for people in our community, including:</p>
+    <ul>
+        <li><b>Leaderboards</b> stored in a Mongo database and viewable <a href="https://bluedragonmc.com/leaderboards" target="_blank">online</a>.</li>
+        <li>A <b>jukebox</b> that decodes and plays songs stored in <a href="https://opennbs.org/nbs" target="_blank">ONBS format</a>.</li>
+        <li>A <b>queue</b> and party <a href="https://github.com/BlueDragonMC/Puffin" target="_blank">system</a> that sends <a href="https://grpc.io/" target="_blank">gRPC</a> messages to and from game servers running in <a href="https://www.docker.com/" target="_blank">Docker</a> containers.</li>
+        <li>Detailed <b><a href="https://developer.bluedragonmc.com" target="_blank">documentation</a></b> to help other developers make games with our software.</li>
+    </ul>
+</ProjectPage>
+
+<!-- <style is:inline>
+    @property --blue-grad-start {
+        syntax: '<color>';
+        initial-value: #4EB2F4;
+        inherits: false;
+    }
+
+    @property --blue-grad-end {
+        syntax: '<color>';
+        initial-value: #3336f4;
+        inherits: false;
+    }
+    .text-gradient {
+        background-image: linear-gradient(
+            90deg,
+            #4EB2F4,
+            #3336f4
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 30%;
+    }
+    .button-external-emphasis {
+        background-image: linear-gradient(
+            90deg,
+            var(--blue-grad-start),
+            var(--blue-grad-end)
+        );
+        transition: --blue-grad-start 300ms, --blue-grad-end 300ms
+    }
+    .button-external-emphasis:hover {
+        --blue-grad-start: #3336f4;
+        --blue-grad-end: #2792f7;
+    }
+</style> -->
+
+<style is:inline>
+    article {
+        --accent: 39, 146, 247;
+        --accent-dark: 51, 54, 244;
+        --accent-light: 78, 178, 244;
+        --accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+    }
+</style>

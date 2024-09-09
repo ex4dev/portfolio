@@ -1,26 +1,53 @@
 ---
 interface Props {
+	name: string;
 	title: string;
 	body: string;
 	href: string;
+	image_alt: string;
 }
 
-const { href, title, body } = Astro.props;
+const { name, title, body, href, image_alt } = Astro.props;
+
+const hero_img = "/projects/" + name + "/hero.png"
+const image_transition_name = "project_" + name + "_img";
+const title_transition_name = "project_" + name + "_title";
+const description_transition_name = "project_" + name + "_description";
 ---
 
 <li class="link-card">
 	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
+		<div class="link-card-img-container">
+			<img src={hero_img} alt={image_alt} transition:name={image_transition_name} />
+		</div>
+		<div class="link-card-text">
+			<h2 transition:name={title_transition_name}>
+				{title}
+				<span>&rarr;</span>
+			</h2>
+			<p transition:name={description_transition_name}>
+				{body}
+			</p>
+		</div>
 	</a>
 </li>
 <style>
-	.link-card {
+	.link-card-img-container {
+		height: 9rem;
+		width: 100%;
+		overflow: hidden;
+	}
+	.link-card img {
+		width: 100%;
+		height: 100%;
+		scale: 107%;
+		object-fit: cover;
+		transition: scale 0.3s;
+	}
+	.link-card:is(:hover, :focus-within) img {
+		scale: 100%;
+	}
+	.link-card {	
 		list-style: none;
 		display: flex;
 		padding: 1px;
@@ -31,16 +58,25 @@ const { href, title, body } = Astro.props;
 		background-position: 100%;
 		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		transition: scale 0.3s
+	}
+	.link-card-text {
+		padding: calc(1.5rem - 1px);
 	}
 	.link-card > a {
 		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
 		text-decoration: none;
 		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
 		border-radius: 8px;
 		color: white;
 		background-color: #23262d;
 		opacity: 0.8;
+		overflow: hidden;
 	}
 	h2 {
 		margin: 0;
@@ -51,9 +87,15 @@ const { href, title, body } = Astro.props;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
+	.link-card:active {
+		scale: 96%;
+	}
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
 		background-image: var(--accent-gradient);
+	}
+	.link-card:is(:hover, :focus-within):not(:active) {
+		scale: 107%;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(var(--accent-light));

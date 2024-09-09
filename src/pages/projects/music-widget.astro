@@ -1,0 +1,24 @@
+---
+import ProjectPage from "../../components/ProjectPage.astro"
+---
+
+<ProjectPage
+    name="music-widget"
+    title="Music Widget"
+    description="A media controls widget for Android that works with any app."
+>
+    <div class="button-row">
+        <a class="button-external-emphasis" href="https://github.com/ex4dev/music-widget" target="_blank">View on GitHub</a>
+    </div>
+    <hr>
+    <h3>About</h3>
+    <p>When I first got an Android device, I loved all the ways you could customize the home screen, but I really wanted it to show what media was currently playing.
+        In brainstorming ways to do this, I remembered that playing media is sent as a notification, just like any other.
+        Then, I discovered the Android <a href="https://developer.android.com/reference/android/service/notification/NotificationListenerService" target="_blank">NotificationListenerService</a>, which allows apps to respond to incoming notifications.
+        Using this service, I developed an app that displays a widget on your home screen with the current playing song or other media.
+        The widget also has buttons to pause, skip, or rewind, which activate their respective options from the notification.
+    </p>
+    <h3>Screenshots</h3>
+    <img src="/projects/music-widget/widget-light.png" width="494"/>
+    <img src="/projects/music-widget/settings.png" width="494" />
+</ProjectPage>
