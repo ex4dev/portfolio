@@ -62,18 +62,19 @@ a {
     margin-right: 0.4rem;
 }
 .hero-container {
+    /** This is the element being animated in view transitions **/
     position: relative;
     text-align: center;
     border-radius: 8px;
     overflow: hidden;
     height: 15rem;
+    opacity: 60%;
 }
 .hero-img {
     object-fit: cover;
     width: 100%;
     height: 100%;
     position: static;
-    opacity: 60%;
 }
 h2 {
     margin-bottom: -1rem;

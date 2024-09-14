@@ -19,8 +19,10 @@ const description_transition_name = "project_" + name + "_description";
     <main>
         <a class="link-back" href="/">Back</a>
         <article>
-            <div class="hero-container">
-                <img class="hero-img" src={hero_img} transition:name={image_transition_name} />
+            <div>
+                <div class="hero-container" transition:name={image_transition_name}>
+                    <img class="hero-img" src={hero_img} />
+                </div>
             </div>
             <div class="title-section">
                 <h2 class="text-gradient" transition:name={title_transition_name}>{title}</h2>
