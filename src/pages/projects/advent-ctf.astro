@@ -5,6 +5,37 @@ import ProjectPage from "../../components/ProjectPage.astro";
 <ProjectPage
     name="advent-ctf"
     title="Advent CTF"
-    description="Test your cybersecurity skills with competitive challenges in cryptography, steganography, Linux configuration, programming, and reverse engineering"
+    description="Test your cybersecurity skills with competitive challenges in cryptography, steganography, Linux configuration, programming, and reverse engineering."
 >
+    <div class="button-row">
+        <a class="button-external-emphasis" href="https://youtu.be/V3YevbWpH-M" target="_blank">Watch Video</a>
+    </div>
+    <hr>
+    <h3>About</h3>
+    <p>
+        This project is a site where users can practice their programming and cybersecurity skills by applying them to challenges in controlled environments.
+        Advent CTF is inspired by <a href="https://picoctf.org/" target="_blank">picoCTF</a>, an annual competition with similar challenges, and <a href="https://adventofcode.com/" target="_blank">Advent of Code</a>, a website where players earn points based on how fast they complete certain programming challenges.
+        For my project, users earn points for completing cybersecurity-related challenges, and the number of points they get for each challenge depends on how fast they solve it.
+    </p>
+    <img class="body-img" src="/projects/advent-ctf/challenges.png" />
+    <p>
+        Each one contains a clue, and sometimes a file can be downloaded and inspected.
+        Based on the information given in the challenges, players have to find or generate a "flag", which is a short line of text that counts as a solution to the challenge.
+        To prevent cheating, the flag for each challenge is different for everyone.
+    </p>
+    <p>
+        The interface for the website itself was created with <a href="https://svelte.dev/" target="_blank">Svelte</a>, a popular JavaScript framework.
+        For the backend, user data, including players' usernames and scores, is scored in a SQLite database.
+        That way, the data is portable and I never have to worry about hosting a separate database server.
+    </p>
+    <img class="body-img" src="/projects/advent-ctf/terminal.png" />
+    <p>
+        Some challenges also include a web-based terminal. It automatically uses WebSockets to connect to an Ubuntu-based virtual machine running on the host system.
+        Every time I type a letter, it sends the input to the server, which processes what I typed and sends it back to the browser.
+        The VM itself is not connected to the internet, but any files necessary for challenge completion are mounted inside the image.
+    </p>
+    <hr>
+    <p>
+        This project was completed in January 2024 for submission in my Computer Science Advanced Studies course. It was for a grade, but it was made fully independently, from the idea to the final product.
+    </p>
 </ProjectPage>
