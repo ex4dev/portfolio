@@ -1,34 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/article-page.css';
+import Layout from "../layouts/Layout.astro";
+import "../styles/article-page.css";
 
 interface Props {
-    name: string;
-	title: string;
-    description: string;
+  name: string;
+  title: string;
+  description: string;
 }
-const {name, title, description} = Astro.props
+const { name, title, description } = Astro.props;
 
-const hero_img = "/projects/" + name + "/hero.png"
+const hero_img = "/projects/" + name + "/hero.png";
 const image_transition_name = "project_" + name + "_img";
 const title_transition_name = "project_" + name + "_title";
 const description_transition_name = "project_" + name + "_description";
 ---
 
 <Layout title={title}>
-    <main>
-        <a class="link-back" href="/">Back</a>
-        <article>
-            <div>
-                <div class="hero-container" transition:name={image_transition_name}>
-                    <img class="hero-img" src={hero_img} />
-                </div>
-            </div>
-            <div class="title-section">
-                <h2 class="text-gradient" transition:name={title_transition_name}>{title}</h2>
-                <p transition:name={description_transition_name}>{description}</p>
-            </div>
-            <slot />
-        </article>
-    </main>
+  <main>
+    <a class="link-back" href="/">Back</a>
+    <article>
+      <div>
+        <div class="hero-container" transition:name={image_transition_name}>
+          <img class="hero-img" src={hero_img} />
+        </div>
+      </div>
+      <div class="title-section">
+        <h2 class="text-gradient" transition:name={title_transition_name}>
+          {title}
+        </h2>
+        <p transition:name={description_transition_name}>{description}</p>
+      </div>
+      <slot />
+    </article>
+  </main>
 </Layout>

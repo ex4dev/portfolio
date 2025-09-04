@@ -1,87 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Tyler Swanson">
-	<main>
-		<h1>Hello, I'm <span class="text-gradient">Tyler</span> 👋</h1>
-		<p class="intro-tagline">
-			I'm a passionate developer and student interested in game development, cybersecurity, and video production.
-		</p>
-		<h2>My Projects</h2>
-		<ul role="list" class="link-card-grid">
-			<Card
-				name="bluedragon"
-				href="/projects/bluedragon"
-				title="BlueDragon"
-				body="An original Minecraft server featuring 13 minigames, 42 leaderboards, and a whole lot of fun!"
-				image_alt="A screenshot taken from one of BlueDragon's minigames."
-			/>
-			<Card
-				name="advent-ctf"
-				href="/projects/advent-ctf"
-				title="Advent CTF"
-				body="Test your cybersecurity skills with competitive challenges in cryptography, steganography, Linux configuration, programming, and reverse engineering."
-				image_alt=""
-			/>
-			<Card
-				name="wet-bulb-weather"
-				href="/projects/wet-bulb-weather"
-				title="Wet Bulb Weather"
-				body="A weather app that provides accurate data and actionable advice based on the Wet Bulb Globe Temperature."
-				image_alt="The advice section of the app. It contains a green box that says 'Almost no risk. The wet bulb globe temperature is between 70.1° (shade) and 75.5° (full sun). Take a 5 minute break from intense activity every 30 minutes.'"
-			/>
-			<Card
-				name="popusim"
-				href="/projects/popusim"
-				title="Popusim"
-				body="An interactive population pyramid game that allows the user to see the consequences of certain actions and policies on the population."
-				image_alt="A screenshot of a population pyramid from the Popusim website."
-			/>
-			<Card
-				name="music-widget"
-				href="/projects/music-widget"
-				title="Music Widget"
-				body="A media controls widget for Android that works with any app."
-				image_alt="A screenshot of the Music Widget running an an Android home screen."
-			/>
-			<Card
-				name="brawl-starter"
-				href="/projects/brawl-starter"
-				title="Brawl Starter"
-				body="A Qt-based launcher for Knockout City that works with Linux and connects to kocity.xyz servers."
-				image_alt="The default list of servers displayed in the Brawl Starter application. Each one has a name, address, player count, online status, and type."
-			/>
-			<Card
-				name="mc-lockout"
-				href="/projects/mc-lockout"
-				title="Minecraft Lockout"
-				body="A Spigot plugin that has teams racing against each other to complete specific objectives first."
-				image_alt="A screenshot of a lockout board. It is a menu in Minecraft containing a 5 by 5 grid of random items. At the top, the menu is labeled 'Challenges'."
-			/>
-			<Card
-				name="github"
-				href="https://github.com/ex4dev?tab=repositories"
-				title="View More"
-				body="Click to see more projects on my GitHub profile."
-				image_alt="The GitHub logo in white on a gray background."
-			/>
-		</ul>
-	</main>
+  <main>
+    <h1>Hello, I'm <span class="text-gradient">Tyler</span> 👋</h1>
+    <p class="intro-tagline">
+      I'm a passionate developer and student interested in game development,
+      cybersecurity, and video production.
+    </p>
+    <h2>My Projects</h2>
+    <ul role="list" class="link-card-grid">
+      <Card
+        name="bluedragon"
+        href="/projects/bluedragon"
+        title="BlueDragon"
+        body="An original Minecraft server featuring 13 minigames, 42 leaderboards, and a whole lot of fun!"
+        image_alt="A screenshot taken from one of BlueDragon's minigames."
+      />
+      <Card
+        name="advent-ctf"
+        href="/projects/advent-ctf"
+        title="Advent CTF"
+        body="Test your cybersecurity skills with competitive challenges in cryptography, steganography, Linux configuration, programming, and reverse engineering."
+        image_alt=""
+      />
+      <Card
+        name="wet-bulb-weather"
+        href="/projects/wet-bulb-weather"
+        title="Wet Bulb Weather"
+        body="A weather app that provides accurate data and actionable advice based on the Wet Bulb Globe Temperature."
+        image_alt="The advice section of the app. It contains a green box that says 'Almost no risk. The wet bulb globe temperature is between 70.1° (shade) and 75.5° (full sun). Take a 5 minute break from intense activity every 30 minutes.'"
+      />
+      <Card
+        name="popusim"
+        href="/projects/popusim"
+        title="Popusim"
+        body="An interactive population pyramid game that allows the user to see the consequences of certain actions and policies on the population."
+        image_alt="A screenshot of a population pyramid from the Popusim website."
+      />
+      <Card
+        name="music-widget"
+        href="/projects/music-widget"
+        title="Music Widget"
+        body="A media controls widget for Android that works with any app."
+        image_alt="A screenshot of the Music Widget running an an Android home screen."
+      />
+      <Card
+        name="brawl-starter"
+        href="/projects/brawl-starter"
+        title="Brawl Starter"
+        body="A Qt-based launcher for Knockout City that works with Linux and connects to kocity.xyz servers."
+        image_alt="The default list of servers displayed in the Brawl Starter application. Each one has a name, address, player count, online status, and type."
+      />
+      <Card
+        name="mc-lockout"
+        href="/projects/mc-lockout"
+        title="Minecraft Lockout"
+        body="A Spigot plugin that has teams racing against each other to complete specific objectives first."
+        image_alt="A screenshot of a lockout board. It is a menu in Minecraft containing a 5 by 5 grid of random items. At the top, the menu is labeled 'Challenges'."
+      />
+      <Card
+        name="github"
+        href="https://github.com/ex4dev?tab=repositories"
+        title="View More"
+        body="Click to see more projects on my GitHub profile."
+        image_alt="The GitHub logo in white on a gray background."
+      />
+    </ul>
+  </main>
 </Layout>
 
 <style>
-	main {
-		font-size: 20px;
-	}
-	.intro-tagline {
-		text-align: center;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+  main {
+    font-size: 20px;
+  }
+  .intro-tagline {
+    text-align: center;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
 </style>
