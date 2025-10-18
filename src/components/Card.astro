@@ -9,7 +9,9 @@ interface Props {
 
 const { name, title, body, href, image_alt } = Astro.props;
 
-const hero_img = "/projects/" + name + "/hero.png";
+const hero_img = href.startsWith("/")
+  ? href + "/hero.png"
+  : "/projects/" + name + "/hero.png";
 const image_transition_name = "project_" + name + "_img";
 const title_transition_name = "project_" + name + "_title";
 const description_transition_name = "project_" + name + "_description";
