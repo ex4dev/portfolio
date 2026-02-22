@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import SocialLink from "../components/SocialLink.astro";
 ---
 
 <Layout title="Tyler Swanson">
@@ -10,7 +11,27 @@ import Card from "../components/Card.astro";
       I'm an NC State student passionate about developing apps that build human
       connections and facilitate interactive learning.
     </p>
-    <h2>My Projects</h2>
+    <div class="my-projects-row">
+      <h2>My Projects</h2>
+      <div class="social-link-block">
+        <!-- Use color="var(--accent-gradient)" for gradient -->
+        <SocialLink
+          name="Email"
+          color="#393c42"
+          href="mailto:contact@tswanson.dev"
+        />
+        <SocialLink
+          name="GitHub"
+          color="#eeeeee"
+          href="https://github.com/ex4dev"
+        />
+        <SocialLink
+          name="LinkedIn-white"
+          color="#0a66c2"
+          href="https://www.linkedin.com/in/tjswanson2/"
+        />
+      </div>
+    </div>
     <ul role="list" class="link-card-grid">
       <Card
         name="bluedragon"
@@ -86,10 +107,23 @@ import Card from "../components/Card.astro";
   .intro-tagline {
     text-align: center;
   }
+  .my-projects-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 0;
+  }
   .link-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
+  }
+  .social-link-block {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 </style>
