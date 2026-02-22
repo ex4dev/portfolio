@@ -1,0 +1,60 @@
+---
+import ProjectPage from "../../components/ProjectPage.astro";
+---
+
+<ProjectPage
+  name="inquizitive"
+  title="Inquizitive"
+  description="Hack_NCState 2026's Best Use of Gemini API — A tool to stop AI contribution spam on open-source projects by requiring contributors to complete a targeted verification quiz."
+>
+  <div class="button-row">
+    <a
+      class="button-external-emphasis"
+      href="https://github.com/ex4dev/inquizitive"
+      target="_blank">View on GitHub</a
+    >
+    <a
+      class="button-external"
+      href="https://devpost.com/software/inquizitive-9brwef"
+      target="_blank">View on Devpost</a
+    >
+  </div>
+  <hr />
+  <h3>About</h3>
+  <p>
+    The advent of powerful AI tools means that anyone can submit code faster
+    than ever, even without really knowing what it does. Recently, there's been
+    a significant influx in low-effort contributions to popular open-source
+    projects. This creates a heavy burden on the maintainers, who don't have the
+    time to review all the spam.
+  </p>
+  <p>
+    At <a href="https://hackncstate.org/">Hack_NCState 2026</a>, we built a
+    solution in just 24 hours. When a contributor submits a pull request to a
+    repository managed by Inquizitive, the app asks Gemini to generate a quiz
+    using the pull request's diff and description. It posts a link to it in the
+    pull request comments, and when the submitter completes it, a label is added
+    to the pull request that indicates whether they passed.
+  </p>
+  <img class="body-img" src="/projects/inquizitive/comments.png" />
+  <p>
+    Rather than just asking what was changed, the content of the quizzes is
+    focused on the context surrounding the changes and their possible
+    implications on security and functionality. This ensures that contributors
+    understand the nature and impact of their changes before asking maintainers
+    to review them. The quizzes aren't meant to be foolproof; rather, they serve
+    as a way for maintainers to easily filter out low-effort contributions to
+    save time reviewing pull requests.
+  </p>
+  <img class="body-img" src="/projects/inquizitive/quiz.png" />
+  <p>
+    Inquizitive is a full-stack web application written in TypeScript. On the
+    frontend, we're using React and TailwindCSS, and on the backend, we're using
+    Hono and Prisma. We're using a GitHub App to subscribe to new pull requests
+    on users' repositories and the GitHub API for user authentication and
+    interacting with pull request comments as a bot. Finally, we're using SQLite
+    for the database and the Gemini API for AI quiz generation. Our project won
+    MLH's <strong>Best Use of Gemini API</strong> category for our unique use of
+    Gemini's structured output feature to solve a legitimate problem.
+  </p>
+</ProjectPage>
